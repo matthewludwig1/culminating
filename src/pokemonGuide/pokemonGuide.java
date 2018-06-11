@@ -1,6 +1,8 @@
 /*
  * Matthew Ludwig
  * Culminating program 
+ * This is the main frame of the project
+ * From here, the user can decide 
  * June 6 2018
  */
 
@@ -149,7 +151,8 @@ public class pokemonGuide extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void restartProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartProgramActionPerformed
-           if(evt.getSource() == restartProgram)
+         // clears the main frame
+        if(evt.getSource() == restartProgram)
     {
         dispose();
         pokemonGuide reset = new pokemonGuide();
