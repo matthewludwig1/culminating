@@ -1,6 +1,6 @@
 /*
  * Matthew Ludwig
- * This is the second frame of the main program
+ * This is the second frame of the program
  * It is responsible for the information display and a tutorial to pokemon
  */
 
