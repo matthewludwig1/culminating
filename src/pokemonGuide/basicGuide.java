@@ -16,6 +16,9 @@ public class basicGuide extends javax.swing.JFrame {
     /**
      * Creates new form basicGuide
      */
+    int[] grade = new int[1]; // declares type array
+    int[] ability = new int[1];  // declares ability array
+    String name;
     public basicGuide() {
         initComponents();
     }
@@ -29,7 +32,7 @@ public class basicGuide extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        jRadioButton1 = new javax.swing.JRadioButton();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -42,17 +45,22 @@ public class basicGuide extends javax.swing.JFrame {
         type2 = new javax.swing.JRadioButton();
         type3 = new javax.swing.JRadioButton();
         type4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        abil1 = new javax.swing.JRadioButton();
+        nameButton = new javax.swing.JButton();
+        abil2 = new javax.swing.JRadioButton();
+        abil3 = new javax.swing.JRadioButton();
+        abil4 = new javax.swing.JRadioButton();
+        testButton = new javax.swing.JButton();
+        outputTest = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+
+        jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,16 +107,37 @@ public class basicGuide extends javax.swing.JFrame {
         });
 
         type4.setText("4");
+        type4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                type4ActionPerformed(evt);
+            }
+        });
 
-        jRadioButton5.setText("1");
+        abil1.setText("1");
 
-        jButton1.setText("Enter");
+        nameButton.setText("Enter");
+        nameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameButtonActionPerformed(evt);
+            }
+        });
 
-        jRadioButton6.setText("2");
+        abil2.setText("2");
 
-        jRadioButton7.setText("3");
+        abil3.setText("3");
 
-        jRadioButton8.setText("4");
+        abil4.setText("4");
+
+        testButton.setText("Go");
+        testButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testButtonActionPerformed(evt);
+            }
+        });
+
+        outputTest.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jButton1.setText("Go");
 
         jMenu1.setText("Help");
 
@@ -148,27 +177,45 @@ public class basicGuide extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(type1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton5))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(117, 117, 117))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(type2)
-                        .addGap(18, 18, 18)
-                        .addComponent(type3)
-                        .addGap(18, 18, 18)
-                        .addComponent(type4)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(314, 314, 314)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(type1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(abil1)))
+                                            .addComponent(jButton1))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(abil2)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(abil3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(abil4))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(type2)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(type3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(type4))
+                                            .addComponent(testButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(outputTest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(56, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -176,17 +223,11 @@ public class basicGuide extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addComponent(inputName, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1))
+                        .addComponent(nameButton))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(117, 117, 117))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,29 +240,38 @@ public class basicGuide extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(nameButton))
                 .addGap(30, 30, 30)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(type2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(type4)
-                    .addComponent(type1)
-                    .addComponent(type3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(type2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(type4)
+                        .addComponent(type1)
+                        .addComponent(type3)))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton7))
-                .addContainerGap(162, Short.MAX_VALUE))
+                    .addComponent(abil1)
+                    .addComponent(abil4)
+                    .addComponent(abil3)
+                    .addComponent(abil2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(testButton)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addComponent(outputTest, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         this.dispose();
         pokemonGuide mainFrame = new pokemonGuide();
@@ -233,24 +283,53 @@ public class basicGuide extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void type2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type2ActionPerformed
-        // TODO add your handling code here:
+        grade[0] = 2; // adds 2
     }//GEN-LAST:event_type2ActionPerformed
 
     private void type1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type1ActionPerformed
-        // TODO add your handling code here:
+        grade[0] = 1; // adds 1
+        
     }//GEN-LAST:event_type1ActionPerformed
 
     private void type3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type3ActionPerformed
-        // TODO add your handling code here:
+        grade[0] = 3;  // adds 3
     }//GEN-LAST:event_type3ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        if (evt.getSource() == jMenuItem3) {
+        if (evt.getSource() == jMenuItem3) {   // resets program
            dispose();
            basicGuide reset = new basicGuide();
            reset.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
+    testButton.setVisible(false);
+    while (outputTest.getText() == null) {
+        if (grade[0] == 4 && ability[0] == 4)  { 
+        outputTest.setText(name + ", Since you rated yourself highly, you should go to the other screen");
+     }
+    
+        else if (grade[0] == 3 || grade[0] == 2 || ability[0] == 3 || ability[0] == 2){
+         outputTest.setText(name + " you rated yourself a " + grade[0] + " in type advantages" + "\n" + "and a " + ability[0] + " in abilities");
+         jButton1.setVisible(true);
+            }
+        
+        else {
+            
+            }
+        }
+       jLabel6.setText("Click on the button below to go to the lesson");
+    }//GEN-LAST:event_testButtonActionPerformed
+
+    private void nameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameButtonActionPerformed
+        name = inputName.getText();
+        inputName.setText(null);
+    }//GEN-LAST:event_nameButtonActionPerformed
+
+    private void type4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type4ActionPerformed
+        grade[0] = 4;
+    }//GEN-LAST:event_type4ActionPerformed
         
     /**
      * @param args the command line arguments
@@ -288,7 +367,10 @@ public class basicGuide extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton abil1;
+    private javax.swing.JRadioButton abil2;
+    private javax.swing.JRadioButton abil3;
+    private javax.swing.JRadioButton abil4;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField inputName;
     private javax.swing.JButton jButton1;
@@ -304,10 +386,10 @@ public class basicGuide extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JButton nameButton;
+    private javax.swing.JLabel outputTest;
+    private javax.swing.JButton testButton;
     private javax.swing.JRadioButton type1;
     private javax.swing.JRadioButton type2;
     private javax.swing.JRadioButton type3;
