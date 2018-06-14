@@ -19,6 +19,7 @@ public class basicGuide extends javax.swing.JFrame {
     int[] grade = new int[1]; // declares type array
     int[] ability = new int[1];  // declares ability array
     String name;
+  
     public basicGuide() {
         initComponents();
     }
@@ -33,6 +34,7 @@ public class basicGuide extends javax.swing.JFrame {
     private void initComponents() {
 
         jRadioButton1 = new javax.swing.JRadioButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -86,6 +88,7 @@ public class basicGuide extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("I Understand how abilities influence damage calculations:");
 
+        buttonGroup1.add(type1);
         type1.setText("1");
         type1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +96,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(type2);
         type2.setText("2");
         type2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +104,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(type3);
         type3.setText("3");
         type3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +112,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(type4);
         type4.setText("4");
         type4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +120,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(abil1);
         abil1.setText("1");
         abil1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +135,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(abil2);
         abil2.setText("2");
         abil2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +143,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(abil3);
         abil3.setText("3");
         abil3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +151,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(abil4);
         abil4.setText("4");
         abil4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +167,12 @@ public class basicGuide extends javax.swing.JFrame {
         });
 
         jButton1.setText("Begin Lesson");
+        jButton1.setEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         outputTest.setColumns(20);
         outputTest.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
@@ -269,13 +285,12 @@ public class basicGuide extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(type2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(type4)
-                        .addComponent(type1)
-                        .addComponent(type3)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(type4)
+                    .addComponent(type1)
+                    .addComponent(type3)
+                    .addComponent(type2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
@@ -290,7 +305,7 @@ public class basicGuide extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(testButton)
                         .addGap(60, 60, 60)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -299,8 +314,6 @@ public class basicGuide extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         this.dispose();  // close frame
         pokemonGuide mainFrame = new pokemonGuide();  // open the new main frame
@@ -341,13 +354,13 @@ public class basicGuide extends javax.swing.JFrame {
     abil2.setSelected(false);
     abil3.setSelected(false);
     abil4.setSelected(false);
+    jButton1.setEnabled(true);
         
         testButton.setVisible(false);  // disable after use
         if (grade[0] == 4 && ability[0] == 4)  { 
         outputTest.setText(name + ", Since both your ratings were 4" + "\n" + "you should go back to the main screen to learn about more advanced topics" + "\n" + "Press help and 'go back' to reach the main menu");
         jButton1.setVisible(true);
      }
-        
         
         else if (grade[0] == 4 && ability[0] == 1) {
             outputTest.setText(name + ", if you want to learn more about types and abilities, start the lesson");
@@ -366,10 +379,7 @@ public class basicGuide extends javax.swing.JFrame {
             outputTest.setText(name + ", are you new to the pokemon series?" + "\n" + "If so, go to the pokemon website for further information on the beginning concepts");
             jButton1.setVisible(true);
             }
-        
-        
-       
-       
+  
      // this checks to see which options were selected
     }//GEN-LAST:event_testButtonActionPerformed
 
@@ -398,6 +408,12 @@ public class basicGuide extends javax.swing.JFrame {
     private void abil4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abil4ActionPerformed
         ability[0] = 4; //adds 4
     }//GEN-LAST:event_abil4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+        basicLesson lesson1 = new basicLesson();
+        lesson1.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
         
     /*
     The arrays can be accesed in other methods to compare the pretest and the posttest
@@ -446,6 +462,7 @@ public class basicGuide extends javax.swing.JFrame {
     private javax.swing.JRadioButton abil2;
     private javax.swing.JRadioButton abil3;
     private javax.swing.JRadioButton abil4;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField inputName;
     private javax.swing.JButton jButton1;
