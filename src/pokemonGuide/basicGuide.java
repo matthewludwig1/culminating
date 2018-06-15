@@ -327,15 +327,17 @@ public class basicGuide extends javax.swing.JFrame {
 
     private void type2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type2ActionPerformed
         grade[0] = 2; // adds 2
+        testButton.setVisible(true);
     }//GEN-LAST:event_type2ActionPerformed
 
     private void type1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type1ActionPerformed
         grade[0] = 1; // adds 1
-        
+        testButton.setVisible(true);
     }//GEN-LAST:event_type1ActionPerformed
 
     private void type3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type3ActionPerformed
         grade[0] = 3;  // adds 3
+        testButton.setVisible(true);
     }//GEN-LAST:event_type3ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -380,6 +382,7 @@ public class basicGuide extends javax.swing.JFrame {
             outputTest.setText(name + ", are you new to the pokemon series?" + "\n" + "If so, go to the pokemon website for further information on the beginning concepts");
             jButton1.setVisible(true);
             }
+        
   
      // this checks to see which options were selected
     }//GEN-LAST:event_testButtonActionPerformed
@@ -392,22 +395,27 @@ public class basicGuide extends javax.swing.JFrame {
 
     private void type4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type4ActionPerformed
         grade[0] = 4; // adds 4
+        testButton.setVisible(true);
     }//GEN-LAST:event_type4ActionPerformed
 
     private void abil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abil1ActionPerformed
         ability[0] = 1; //adds 1
+        testButton.setVisible(true);
     }//GEN-LAST:event_abil1ActionPerformed
 
     private void abil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abil2ActionPerformed
         ability[0] = 2; //adds 2
+        testButton.setVisible(true);
     }//GEN-LAST:event_abil2ActionPerformed
 
     private void abil3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abil3ActionPerformed
         ability[0] = 3; // adds 3
+        testButton.setVisible(true);
     }//GEN-LAST:event_abil3ActionPerformed
 
     private void abil4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abil4ActionPerformed
         ability[0] = 4; //adds 4
+        testButton.setVisible(true);
     }//GEN-LAST:event_abil4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
