@@ -10,7 +10,7 @@ package pokemonGuide;
  *
  * @author malud0519
  */
-import java.util.*; 
+
 public class basicGuide extends javax.swing.JFrame {
 
     /**
@@ -174,6 +174,7 @@ public class basicGuide extends javax.swing.JFrame {
             }
         });
 
+        outputTest.setEditable(false);
         outputTest.setColumns(20);
         outputTest.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         outputTest.setRows(5);
@@ -410,9 +411,9 @@ public class basicGuide extends javax.swing.JFrame {
     }//GEN-LAST:event_abil4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.dispose();
-        basicLesson lesson1 = new basicLesson();
-        lesson1.setVisible(true);
+       this.dispose();
+       basicLesson basic = new basicLesson();
+       basic.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
         
     /*

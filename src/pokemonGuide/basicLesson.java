@@ -9,7 +9,7 @@ package pokemonGuide;
  *
  * @author malud0519
  */
-
+import java.util.*; 
 public class basicLesson extends javax.swing.JFrame {
 
     /**
@@ -28,16 +28,37 @@ public class basicLesson extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jSpinner1 = new javax.swing.JSpinner();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputText = new javax.swing.JTextArea();
+        statboosts = new javax.swing.JRadioButton();
+        rng = new javax.swing.JRadioButton();
+        types = new javax.swing.JRadioButton();
+        natures = new javax.swing.JRadioButton();
+        basestats = new javax.swing.JRadioButton();
+        items = new javax.swing.JRadioButton();
+        ivs = new javax.swing.JRadioButton();
+        moves = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         goBack = new javax.swing.JMenuItem();
         reset = new javax.swing.JMenuItem();
         Exit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,33 +67,144 @@ public class basicLesson extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Introduction ");
 
+        outputText.setEditable(false);
         outputText.setColumns(20);
+        outputText.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         outputText.setRows(5);
-        outputText.setText("By now you have started pokemon, but you \nprobably have some questions about pokemon \nbattling. ");
+        outputText.setText("By now you have started pokemon, but you \nprobably have some questions about pokemon \nbattling. There are many different mechanics\nthat influence the attack damage and the \namount of damage taken. In total, there are \n5 different pokemon stats which affect the\ndamage. These are HP, Attack, Defense,SPA \nand SPD. Each of these are set before each \nbattle but, they can be increased using stat \nboosts.You can choose which topic to learn \nmore about below.");
         jScrollPane1.setViewportView(outputText);
+
+        buttonGroup1.add(statboosts);
+        statboosts.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        statboosts.setForeground(new java.awt.Color(0, 51, 255));
+        statboosts.setText("Stat Boosts");
+        statboosts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statboostsActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rng);
+        rng.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rng.setForeground(new java.awt.Color(255, 51, 51));
+        rng.setText("RNG");
+        rng.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rngActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(types);
+        types.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        types.setForeground(new java.awt.Color(255, 102, 51));
+        types.setText("Type Matchups");
+        types.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typesActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(natures);
+        natures.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        natures.setForeground(new java.awt.Color(51, 0, 153));
+        natures.setText("Natures");
+        natures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                naturesActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(basestats);
+        basestats.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        basestats.setForeground(new java.awt.Color(0, 153, 51));
+        basestats.setText("Base Stats");
+
+        buttonGroup1.add(items);
+        items.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        items.setForeground(new java.awt.Color(255, 51, 0));
+        items.setText("Items");
+
+        buttonGroup1.add(ivs);
+        ivs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ivs.setForeground(new java.awt.Color(0, 0, 255));
+        ivs.setText("IV's and EV's");
+
+        buttonGroup1.add(moves);
+        moves.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        moves.setForeground(new java.awt.Color(102, 102, 0));
+        moves.setText("Moves");
+        moves.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                movesActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Available Topics");
+
+        jButton1.setText("Go");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(209, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(statboosts)
+                                    .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(basestats)
+                                    .addComponent(types))
+                                .addGap(17, 17, 17)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(items)
+                                    .addComponent(natures))
+                                .addGap(27, 27, 27)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(moves)
+                                    .addComponent(ivs)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(jButton1)))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(4, 4, 4)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(statboosts)
+                    .addComponent(types)
+                    .addComponent(natures)
+                    .addComponent(moves))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(items)
+                    .addComponent(ivs)
+                    .addComponent(basestats)
+                    .addComponent(rng))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Help");
@@ -138,6 +270,26 @@ public class basicLesson extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_resetActionPerformed
 
+    private void typesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typesActionPerformed
+
+    private void rngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rngActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rngActionPerformed
+
+    private void statboostsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statboostsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statboostsActionPerformed
+
+    private void naturesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naturesActionPerformed
+
+    private void movesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_movesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -175,14 +327,28 @@ public class basicLesson extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Exit;
+    private javax.swing.JRadioButton basestats;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenuItem goBack;
+    private javax.swing.JRadioButton items;
+    private javax.swing.JRadioButton ivs;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JRadioButton moves;
+    private javax.swing.JRadioButton natures;
     private javax.swing.JTextArea outputText;
     private javax.swing.JMenuItem reset;
+    private javax.swing.JRadioButton rng;
+    private javax.swing.JRadioButton statboosts;
+    private javax.swing.JRadioButton types;
     // End of variables declaration//GEN-END:variables
 }
