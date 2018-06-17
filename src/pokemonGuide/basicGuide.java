@@ -317,7 +317,7 @@ public class basicGuide extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         this.dispose();  // close frame
-        pokemonGuide mainFrame = new pokemonGuide();  // open the new main frame
+        pokemonGuide mainFrame = new pokemonGuide();  // opens the starting jFrame
         mainFrame.setVisible(true); 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -365,30 +365,30 @@ public class basicGuide extends javax.swing.JFrame {
         jButton1.setVisible(true);
      }
         
-        else if (grade[0] == 4 && ability[0] == 1) {
+        else if (grade[0] == 4 && ability[0] == 1) {  // the user knows more about types
             outputTest.setText(name + ", if you want to learn more about types and abilities, start the lesson");
             jButton1.setVisible(true);
         }
     
-        else if (grade[0] == 3 || grade[0] == 2 || ability[0] == 3 || ability[0] == 2){
+        else if (grade[0] == 3 || grade[0] == 2 || ability[0] == 3 || ability[0] == 2){  // has a fair amount of knowledge
          outputTest.setText(name + ", you rated yourself a " + grade[0] + " in type advantages" + "\n" + "and a " + ability[0] + " in abilities" + "\n" + "this means you have a fair amount of knowledge on battling concepts" + "\n" + "You can expand on your knowledge in the lesson below");
-         jButton1.setVisible(true);
+         jButton1.setVisible(true);  
             }
         else if (grade[0] == 1 && ability[0] == 4) {
             outputTest.setText(name + ", if you want to learn more about type matchups, start the lesson!");
             jButton1.setVisible(true);
         }
-        else {
+        else {  // this means the user is very new to the series
             outputTest.setText(name + ", are you new to the pokemon series?" + "\n" + "If so, go to the pokemon website for further information on the beginning concepts");
             jButton1.setVisible(true);
             }
         
   
-     // this checks to see which options were selected
+     // this method checks to see which options were selected
     }//GEN-LAST:event_testButtonActionPerformed
 
     private void nameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameButtonActionPerformed
-        name = inputName.getText();
+        name = inputName.getText();  // adds the content of the text field to the string variable
         inputName.setText(null);
         testButton.setVisible(true);
     }//GEN-LAST:event_nameButtonActionPerformed
@@ -419,8 +419,8 @@ public class basicGuide extends javax.swing.JFrame {
     }//GEN-LAST:event_abil4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       this.dispose();
-       basicLesson basic = new basicLesson();
+       this.dispose();  // closes this frame
+       basicLesson basic = new basicLesson();  // opens the next frame
        basic.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
         

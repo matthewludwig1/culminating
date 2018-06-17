@@ -120,7 +120,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="basestats" min="-2" max="-2" attributes="0"/>
-                                      <Component id="types" min="-2" max="-2" attributes="0"/>
+                                      <Component id="typeMatchup" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -134,7 +134,7 @@
                                   </Group>
                               </Group>
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel1" min="-2" pref="386" max="-2" attributes="0"/>
+                                  <Component id="title" min="-2" pref="386" max="-2" attributes="0"/>
                                   <Component id="jScrollPane1" min="-2" pref="395" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -156,7 +156,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="title" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="341" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -166,7 +166,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="statboosts" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="types" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="typeMatchup" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="natures" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="moves" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -183,7 +183,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="title">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
@@ -210,7 +210,7 @@
                   <Font name="Monospaced" size="14" style="0"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="By now you have started pokemon, but you &#xa;probably have some questions about pokemon &#xa;battling. There are many different mechanics&#xa;that influence the attack damage and the &#xa;amount of damage taken. In total, there are &#xa;5 different pokemon stats which affect the&#xa;damage. These are HP, Attack, Defense,SPA &#xa;and SPD. Each of these are set before each &#xa;battle but, they can be increased using stat &#xa;boosts.You can choose which topic to learn &#xa;more about below."/>
+                <Property name="text" type="java.lang.String" value="By now you have started pokemon, but you &#xa;probably have some questions about pokemon &#xa;battling. There are many different mechanics&#xa;that influence the attack damage and the &#xa;amount of damage taken. In total, there are &#xa;5 different pokemon stats which affect the&#xa;damage. These are HP, Attack, Defense, Special&#xa;Attack and Special Defense. Each of these are&#xa;set prior to each battle but, they can be &#xa;increased using stat boosts.You can choose &#xa;which topic to learn more about below."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -249,7 +249,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rngActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="types">
+        <Component class="javax.swing.JRadioButton" name="typeMatchup">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="buttonGroup1"/>
@@ -263,7 +263,7 @@
             <Property name="text" type="java.lang.String" value="Type Matchups"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="typesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="typeMatchupActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="natures">
@@ -296,6 +296,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Base Stats"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="basestatsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="items">
           <Properties>
@@ -310,6 +313,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Items"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="ivs">
           <Properties>
@@ -324,6 +330,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="IV&apos;s and EV&apos;s"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ivsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="moves">
           <Properties>
@@ -354,7 +363,11 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Go"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -15,6 +15,9 @@ public class basicLesson extends javax.swing.JFrame {
     /**
      * Creates new form basicLesson
      */
+    
+    ArrayList <String> type = new ArrayList <>();
+    
     public basicLesson() {
         initComponents();
     }
@@ -33,12 +36,12 @@ public class basicLesson extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputText = new javax.swing.JTextArea();
         statboosts = new javax.swing.JRadioButton();
         rng = new javax.swing.JRadioButton();
-        types = new javax.swing.JRadioButton();
+        typeMatchup = new javax.swing.JRadioButton();
         natures = new javax.swing.JRadioButton();
         basestats = new javax.swing.JRadioButton();
         items = new javax.swing.JRadioButton();
@@ -62,16 +65,16 @@ public class basicLesson extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Introduction ");
+        title.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        title.setForeground(new java.awt.Color(51, 0, 255));
+        title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        title.setText("Introduction ");
 
         outputText.setEditable(false);
         outputText.setColumns(20);
         outputText.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         outputText.setRows(5);
-        outputText.setText("By now you have started pokemon, but you \nprobably have some questions about pokemon \nbattling. There are many different mechanics\nthat influence the attack damage and the \namount of damage taken. In total, there are \n5 different pokemon stats which affect the\ndamage. These are HP, Attack, Defense,SPA \nand SPD. Each of these are set before each \nbattle but, they can be increased using stat \nboosts.You can choose which topic to learn \nmore about below.");
+        outputText.setText("By now you have started pokemon, but you \nprobably have some questions about pokemon \nbattling. There are many different mechanics\nthat influence the attack damage and the \namount of damage taken. In total, there are \n5 different pokemon stats which affect the\ndamage. These are HP, Attack, Defense, Special\nAttack and Special Defense. Each of these are\nset prior to each battle but, they can be \nincreased using stat boosts.You can choose \nwhich topic to learn more about below.");
         jScrollPane1.setViewportView(outputText);
 
         buttonGroup1.add(statboosts);
@@ -94,13 +97,13 @@ public class basicLesson extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(types);
-        types.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        types.setForeground(new java.awt.Color(255, 102, 51));
-        types.setText("Type Matchups");
-        types.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(typeMatchup);
+        typeMatchup.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        typeMatchup.setForeground(new java.awt.Color(255, 102, 51));
+        typeMatchup.setText("Type Matchups");
+        typeMatchup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                typesActionPerformed(evt);
+                typeMatchupActionPerformed(evt);
             }
         });
 
@@ -118,16 +121,31 @@ public class basicLesson extends javax.swing.JFrame {
         basestats.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         basestats.setForeground(new java.awt.Color(0, 153, 51));
         basestats.setText("Base Stats");
+        basestats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                basestatsActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(items);
         items.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         items.setForeground(new java.awt.Color(255, 51, 0));
         items.setText("Items");
+        items.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemsActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(ivs);
         ivs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ivs.setForeground(new java.awt.Color(0, 0, 255));
         ivs.setText("IV's and EV's");
+        ivs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ivsActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(moves);
         moves.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -144,6 +162,12 @@ public class basicLesson extends javax.swing.JFrame {
         jLabel2.setText("Available Topics");
 
         jButton1.setText("Go");
+        jButton1.setEnabled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,7 +185,7 @@ public class basicLesson extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(basestats)
-                                    .addComponent(types))
+                                    .addComponent(typeMatchup))
                                 .addGap(17, 17, 17)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(items)
@@ -171,7 +195,7 @@ public class basicLesson extends javax.swing.JFrame {
                                     .addComponent(moves)
                                     .addComponent(ivs)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
@@ -185,7 +209,7 @@ public class basicLesson extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(jLabel1)
+                .addComponent(title)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -195,7 +219,7 @@ public class basicLesson extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(statboosts)
-                    .addComponent(types)
+                    .addComponent(typeMatchup)
                     .addComponent(natures)
                     .addComponent(moves))
                 .addGap(9, 9, 9)
@@ -270,25 +294,64 @@ public class basicLesson extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_resetActionPerformed
 
-    private void typesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_typesActionPerformed
+    private void typeMatchupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeMatchupActionPerformed
+      jButton1.setEnabled(true);
+      type.add(0,"Fire");
+      type.add(1, "Water");
+      type.add(2, "Grass");
+      type.add(3, "Bug");
+      type.add(4, "Flying");
+      type.add(5, "Normal");
+      type.add(6, "Rock");
+      type.add(7, "Fighting");
+      type.add(8, "Ice");
+      type.add(9, "Ghost");
+      type.add(10, "Ground");
+      type.add(11, "Lightning");
+      type.add(12, "Dragon");
+      type.add(13, "Psychic");
+      type.add(14, "Poison");
+      type.add(15, "Fairy");
+      
+      for (int i = 0; i < type.size(); i++) {
+         
+      }
+      
+    }//GEN-LAST:event_typeMatchupActionPerformed
 
     private void rngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rngActionPerformed
-        // TODO add your handling code here:
+        jButton1.setEnabled(true);
     }//GEN-LAST:event_rngActionPerformed
 
     private void statboostsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statboostsActionPerformed
-        // TODO add your handling code here:
+        jButton1.setEnabled(true);
     }//GEN-LAST:event_statboostsActionPerformed
 
     private void naturesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturesActionPerformed
-        // TODO add your handling code here:
+        jButton1.setEnabled(true);
     }//GEN-LAST:event_naturesActionPerformed
 
     private void movesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movesActionPerformed
-        // TODO add your handling code here:
+        jButton1.setEnabled(true);
     }//GEN-LAST:event_movesActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        title.setText("");
+        outputText.setText("");
+   
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void basestatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basestatsActionPerformed
+        jButton1.setEnabled(true);
+    }//GEN-LAST:event_basestatsActionPerformed
+
+    private void itemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemsActionPerformed
+        jButton1.setEnabled(true);
+    }//GEN-LAST:event_itemsActionPerformed
+
+    private void ivsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ivsActionPerformed
+        jButton1.setEnabled(true);
+    }//GEN-LAST:event_ivsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,7 +396,6 @@ public class basicLesson extends javax.swing.JFrame {
     private javax.swing.JRadioButton items;
     private javax.swing.JRadioButton ivs;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
@@ -349,6 +411,7 @@ public class basicLesson extends javax.swing.JFrame {
     private javax.swing.JMenuItem reset;
     private javax.swing.JRadioButton rng;
     private javax.swing.JRadioButton statboosts;
-    private javax.swing.JRadioButton types;
+    private javax.swing.JLabel title;
+    private javax.swing.JRadioButton typeMatchup;
     // End of variables declaration//GEN-END:variables
 }
