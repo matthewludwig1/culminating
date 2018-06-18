@@ -32,9 +32,10 @@ public class basicLesson extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<String>();
         jSpinner1 = new javax.swing.JSpinner();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        typeButton = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -48,7 +49,16 @@ public class basicLesson extends javax.swing.JFrame {
         ivs = new javax.swing.JRadioButton();
         moves = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        topicButton = new javax.swing.JButton();
+        fire = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        water = new javax.swing.JRadioButton();
+        grass = new javax.swing.JRadioButton();
+        bug = new javax.swing.JRadioButton();
+        normal = new javax.swing.JRadioButton();
+        flying = new javax.swing.JRadioButton();
+        electric = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         goBack = new javax.swing.JMenuItem();
@@ -56,10 +66,10 @@ public class basicLesson extends javax.swing.JFrame {
         Exit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane2.setViewportView(jList1);
 
@@ -161,13 +171,45 @@ public class basicLesson extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Available Topics");
 
-        jButton1.setText("Go");
-        jButton1.setEnabled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        topicButton.setText("Go");
+        topicButton.setEnabled(false);
+        topicButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                topicButtonActionPerformed(evt);
             }
         });
+
+        typeButton.add(fire);
+        fire.setText("Fire");
+        fire.setEnabled(false);
+
+        typeButton.add(water);
+        water.setText("Water");
+        water.setEnabled(false);
+
+        typeButton.add(grass);
+        grass.setText("Grass");
+        grass.setEnabled(false);
+
+        typeButton.add(bug);
+        bug.setText("Bug");
+        bug.setEnabled(false);
+
+        typeButton.add(normal);
+        normal.setText("Normal");
+        normal.setEnabled(false);
+
+        typeButton.add(flying);
+        flying.setText("Flying");
+        flying.setEnabled(false);
+
+        typeButton.add(electric);
+        electric.setText("Electric");
+        electric.setEnabled(false);
+
+        typeButton.add(jRadioButton1);
+        jRadioButton1.setText("Fightning");
+        jRadioButton1.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,9 +218,23 @@ public class basicLesson extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(grass)
+                            .addComponent(fire)
+                            .addComponent(bug)
+                            .addComponent(normal)
+                            .addComponent(flying)
+                            .addComponent(electric)
+                            .addComponent(water)
+                            .addComponent(jRadioButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(96, 96, 96)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(statboosts)
                                     .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -194,28 +250,52 @@ public class basicLesson extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(moves)
                                     .addComponent(ivs)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(279, 279, 279)
-                        .addComponent(jButton1)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(151, 151, 151)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(279, 279, 279)
+                                .addComponent(topicButton))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(title)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(title))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(fire)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(grass)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bug)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(normal)
+                        .addGap(2, 2, 2)
+                        .addComponent(flying)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(electric)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(water)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(87, 88, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(topicButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(statboosts)
@@ -228,7 +308,7 @@ public class basicLesson extends javax.swing.JFrame {
                     .addComponent(ivs)
                     .addComponent(basestats)
                     .addComponent(rng))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         jMenu1.setText("Help");
@@ -295,7 +375,8 @@ public class basicLesson extends javax.swing.JFrame {
     }//GEN-LAST:event_resetActionPerformed
 
     private void typeMatchupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeMatchupActionPerformed
-      jButton1.setEnabled(true);
+
+      topicButton.setEnabled(true);
       type.add(0,"Fire");
       type.add(1, "Water");
       type.add(2, "Grass");
@@ -320,37 +401,47 @@ public class basicLesson extends javax.swing.JFrame {
     }//GEN-LAST:event_typeMatchupActionPerformed
 
     private void rngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rngActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_rngActionPerformed
 
     private void statboostsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statboostsActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_statboostsActionPerformed
 
     private void naturesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturesActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_naturesActionPerformed
 
     private void movesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movesActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_movesActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+   
+    private void topicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topicButtonActionPerformed
+        if (typeMatchup.isSelected()) {
+          grass.setEnabled(true);
+          fire.setEnabled(true);
+          bug.setEnabled(true);
+          electric.setEnabled(true);
+          normal.setEnabled(true);
+          water.setEnabled(true);
+          flying.setEnabled(true);
+        }
         title.setText("");
         outputText.setText("");
+        
    
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_topicButtonActionPerformed
 
     private void basestatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basestatsActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_basestatsActionPerformed
 
     private void itemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemsActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_itemsActionPerformed
 
     private void ivsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ivsActionPerformed
-        jButton1.setEnabled(true);
+        topicButton.setEnabled(true);
     }//GEN-LAST:event_ivsActionPerformed
 
     /**
@@ -391,27 +482,37 @@ public class basicLesson extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Exit;
     private javax.swing.JRadioButton basestats;
+    private javax.swing.JRadioButton bug;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton electric;
+    private javax.swing.JRadioButton fire;
+    private javax.swing.JRadioButton flying;
     private javax.swing.JMenuItem goBack;
+    private javax.swing.JRadioButton grass;
     private javax.swing.JRadioButton items;
     private javax.swing.JRadioButton ivs;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JRadioButton moves;
     private javax.swing.JRadioButton natures;
+    private javax.swing.JRadioButton normal;
     private javax.swing.JTextArea outputText;
     private javax.swing.JMenuItem reset;
     private javax.swing.JRadioButton rng;
     private javax.swing.JRadioButton statboosts;
     private javax.swing.JLabel title;
+    private javax.swing.JButton topicButton;
+    private javax.swing.ButtonGroup typeButton;
     private javax.swing.JRadioButton typeMatchup;
+    private javax.swing.JRadioButton water;
     // End of variables declaration//GEN-END:variables
 }
