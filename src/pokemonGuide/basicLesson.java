@@ -577,6 +577,7 @@ public class basicLesson extends javax.swing.JFrame {
           ice.setEnabled(true);
           fairy.setEnabled(true);
           ghost.setEnabled(true);
+          dragon.setEnabled(true);
           title.setText("Type Matchups");
           outputText.setText("");
         }
