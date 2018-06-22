@@ -22,6 +22,7 @@ public class basicGuide extends javax.swing.JFrame {
   
     public basicGuide() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -167,7 +168,6 @@ public class basicGuide extends javax.swing.JFrame {
         });
 
         jButton1.setText("Begin Lesson");
-        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -300,15 +300,14 @@ public class basicGuide extends javax.swing.JFrame {
                             .addComponent(abil1)
                             .addComponent(abil4)
                             .addComponent(abil3)
-                            .addComponent(abil2))
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(abil2)))
+                    .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(testButton)
-                        .addGap(60, 60, 60)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                        .addComponent(testButton)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -363,7 +362,7 @@ public class basicGuide extends javax.swing.JFrame {
     abil2.setSelected(false);
     abil3.setSelected(false);
     abil4.setSelected(false);
-    jButton1.setEnabled(true);
+    jButton1.setVisible(true);
         
         testButton.setVisible(false);  // disable after use
         if (grade[0] == 4 && ability[0] == 4)  { 

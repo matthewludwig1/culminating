@@ -21,6 +21,8 @@ public class basicLesson extends javax.swing.JFrame {
     ArrayList <String> type = new ArrayList <>();  // pokemon types
     public basicLesson() {
         initComponents();
+        quiz.setVisible(false);
+        begin.setVisible(false);
     }
 
     /**
@@ -67,6 +69,8 @@ public class basicLesson extends javax.swing.JFrame {
         steel = new javax.swing.JRadioButton();
         poison = new javax.swing.JRadioButton();
         ivs = new javax.swing.JRadioButton();
+        begin = new javax.swing.JButton();
+        quiz = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         goBack = new javax.swing.JMenuItem();
@@ -343,58 +347,79 @@ public class basicLesson extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(ivs);
         ivs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ivs.setText("IV's");
         ivs.setEnabled(false);
+
+        begin.setText("Begin");
+        begin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beginActionPerformed(evt);
+            }
+        });
+
+        quiz.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        quiz.setText("If you are Ready, start the quiz:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane1))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ghost)
+                                    .addComponent(fairy)
+                                    .addComponent(electric))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ice)
+                                    .addComponent(flying)
+                                    .addComponent(psychic))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rock)
+                                    .addComponent(normal)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(topicButton)
+                                        .addComponent(dark)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bug)
+                                    .addComponent(ground)
+                                    .addComponent(steel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(grass)
+                                    .addComponent(fighting)
+                                    .addComponent(poison))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(water)
+                                    .addComponent(dragon)
+                                    .addComponent(fire)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ghost)
-                            .addComponent(fairy)
-                            .addComponent(electric))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ice)
-                            .addComponent(flying)
-                            .addComponent(psychic))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dark)
-                            .addComponent(rock)
-                            .addComponent(normal))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bug)
-                            .addComponent(ground)
-                            .addComponent(steel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(grass)
-                            .addComponent(fighting)
-                            .addComponent(poison))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(water)
-                            .addComponent(dragon)
-                            .addComponent(fire)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(begin))
+                            .addComponent(quiz))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(typeMatchup)
                             .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -403,33 +428,29 @@ public class basicLesson extends javax.swing.JFrame {
                             .addComponent(natures)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(evs)
-                                .addGap(28, 28, 28)
+                                .addGap(18, 18, 18)
                                 .addComponent(ivs)))
-                        .addGap(85, 85, 85)))
+                        .addGap(95, 95, 95)))
                 .addGap(111, 111, 111))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(topicButton)
-                        .addGap(327, 327, 327))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(205, 205, 205))))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(194, 194, 194))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(title)
-                        .addGap(2, 2, 2)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bug)
                     .addComponent(grass)
@@ -453,20 +474,27 @@ public class basicLesson extends javax.swing.JFrame {
                     .addComponent(poison)
                     .addComponent(dragon)
                     .addComponent(fairy))
-                .addGap(4, 4, 4)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(topicButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(typeMatchup)
-                    .addComponent(natures))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(evs)
-                    .addComponent(ivs)
-                    .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(begin))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(topicButton)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(typeMatchup)
+                            .addComponent(natures))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(evs)
+                            .addComponent(ivs))))
+                .addGap(25, 25, 25))
         );
 
         jMenu1.setText("Help");
@@ -513,7 +541,7 @@ public class basicLesson extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         System.exit(0); // exit command
     }//GEN-LAST:event_ExitActionPerformed
@@ -621,7 +649,7 @@ public class basicLesson extends javax.swing.JFrame {
                                 + "super effective toward grass," + "\n" + "bug, and fighting type pokemon.");
                     }
                     else if (type.get(x) == "Ice") {
-                        outputText.setText("Ice type pokemon are weak to fire, rock, fighting and" + "\n" + "steel moves. Ice moves are"
+                        outputText.setText("Ice type pokemon are weak to fire, rock, fighting and steel moves. Ice moves are"
                                 + " super effective against" + "\n" + "grass, ground, dragon, and flying types.");
                     }
                     else if (type.get(x) == "Psychic") {
@@ -679,6 +707,8 @@ public class basicLesson extends javax.swing.JFrame {
                     + " from 0-31. Pokemon with high iv's are highly regarded in the competitive scene, and iv's can be passed on from "
                     + "the parent to the offspring; if certain items are held. The total for the hp or base stat is modeled as a complex"
                     + " mathematical formula, this is because there are many mechanics that affect stats." );
+                   quiz.setVisible(true);
+                   begin.setVisible(true);
         }
         else if (rng.isSelected()) { // if the user wants to learn about rng
             title.setText("Damage Rolls");
@@ -766,6 +796,13 @@ public class basicLesson extends javax.swing.JFrame {
          type.add("Ghost");
     }//GEN-LAST:event_ghostActionPerformed
 
+    private void beginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginActionPerformed
+        this.dispose();
+        quiz finalFrame; 
+        finalFrame = new quiz();
+        finalFrame.setVisible(true);
+    }//GEN-LAST:event_beginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -803,6 +840,7 @@ public class basicLesson extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Exit;
+    private javax.swing.JButton begin;
     private javax.swing.JRadioButton bug;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton dark;
@@ -834,6 +872,7 @@ public class basicLesson extends javax.swing.JFrame {
     private javax.swing.JTextArea outputText;
     private javax.swing.JRadioButton poison;
     private javax.swing.JRadioButton psychic;
+    private javax.swing.JLabel quiz;
     private javax.swing.JMenuItem reset;
     private javax.swing.JRadioButton rng;
     private javax.swing.JRadioButton rock;
