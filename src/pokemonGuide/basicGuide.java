@@ -2,6 +2,7 @@
  * Matthew Ludwig
  * This is the second frame of the program
  * It is responsible for the information display and a tutorial to pokemon
+ * June 11 2018
  */
 
 package pokemonGuide;

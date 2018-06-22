@@ -3,6 +3,7 @@
   This is where the lesson for the pokemon fundementals begin
   This frame will teach the user various aspects of pokemon before redirecting 
   them to a quiz 
+  June 16
 */
 
 package pokemonGuide;
@@ -21,8 +22,7 @@ public class basicLesson extends javax.swing.JFrame {
     ArrayList <String> type = new ArrayList <>();  // pokemon types
     public basicLesson() {
         initComponents();
-        quiz.setVisible(false);
-        begin.setVisible(false);
+       
     }
 
     /**
@@ -35,7 +35,7 @@ public class basicLesson extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<String>();
         jSpinner1 = new javax.swing.JSpinner();
         buttonGroup1 = new javax.swing.ButtonGroup();
         typeButton = new javax.swing.ButtonGroup();
@@ -78,10 +78,10 @@ public class basicLesson extends javax.swing.JFrame {
         Exit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane2.setViewportView(jList1);
 
@@ -353,6 +353,7 @@ public class basicLesson extends javax.swing.JFrame {
         ivs.setEnabled(false);
 
         begin.setText("Begin");
+        begin.setEnabled(false);
         begin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 beginActionPerformed(evt);
@@ -361,6 +362,7 @@ public class basicLesson extends javax.swing.JFrame {
 
         quiz.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         quiz.setText("If you are Ready, start the quiz:");
+        quiz.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -376,8 +378,7 @@ public class basicLesson extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(17, 17, 17)
-                                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jScrollPane1))))
@@ -476,7 +477,7 @@ public class basicLesson extends javax.swing.JFrame {
                     .addComponent(fairy))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
+                        .addGap(120, 120, 120)
                         .addComponent(quiz, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(begin))
@@ -561,7 +562,7 @@ public class basicLesson extends javax.swing.JFrame {
     }//GEN-LAST:event_resetActionPerformed
 
     private void typeMatchupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeMatchupActionPerformed
-     topicButton.setEnabled(true);
+     topicButton.setEnabled(true); // enables the go button
     }//GEN-LAST:event_typeMatchupActionPerformed
 
     private void rngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rngActionPerformed
@@ -707,8 +708,8 @@ public class basicLesson extends javax.swing.JFrame {
                     + " from 0-31. Pokemon with high iv's are highly regarded in the competitive scene, and iv's can be passed on from "
                     + "the parent to the offspring; if certain items are held. The total for the hp or base stat is modeled as a complex"
                     + " mathematical formula, this is because there are many mechanics that affect stats." );
-                   quiz.setVisible(true);
-                   begin.setVisible(true);
+                   quiz.setEnabled(true);
+                   begin.setEnabled(true);
         }
         else if (rng.isSelected()) { // if the user wants to learn about rng
             title.setText("Damage Rolls");
@@ -798,9 +799,8 @@ public class basicLesson extends javax.swing.JFrame {
 
     private void beginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginActionPerformed
         this.dispose();
-        quiz finalFrame; 
-        finalFrame = new quiz();
-        finalFrame.setVisible(true);
+        quiz quizz = new quiz();
+        quizz.setVisible(true);
     }//GEN-LAST:event_beginActionPerformed
 
     /**

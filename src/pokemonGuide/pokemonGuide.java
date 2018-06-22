@@ -65,10 +65,6 @@ public class pokemonGuide extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Click Here to learn more:");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\pikachu1.png")); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Downloads\\snorlax.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,7 +112,7 @@ public class pokemonGuide extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel5)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Help");
@@ -167,7 +163,7 @@ public class pokemonGuide extends javax.swing.JFrame {
     }//GEN-LAST:event_restartProgramActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        System.exit(0);
+        System.exit(0); // exit command
     }//GEN-LAST:event_jMenuItem1ActionPerformed
     
     private void basicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicButtonActionPerformed
