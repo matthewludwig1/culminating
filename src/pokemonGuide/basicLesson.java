@@ -1,6 +1,8 @@
 /*
- Matthew Ludwig
- This is where the lesson for the pokemon fundementals begin
+  Matthew Ludwig
+  This is where the lesson for the pokemon fundementals begin
+  This frame will teach the user various aspects of pokemon before redirecting 
+  them to a quiz 
 */
 
 package pokemonGuide;
@@ -16,8 +18,7 @@ public class basicLesson extends javax.swing.JFrame {
      * Creates new form basicLesson
      */
     
-    ArrayList <String> type = new ArrayList <>();
-    
+    ArrayList <String> type = new ArrayList <>();  // pokemon types
     public basicLesson() {
         initComponents();
     }
@@ -40,14 +41,10 @@ public class basicLesson extends javax.swing.JFrame {
         title = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputText = new javax.swing.JTextArea();
-        statboosts = new javax.swing.JRadioButton();
         rng = new javax.swing.JRadioButton();
         typeMatchup = new javax.swing.JRadioButton();
         natures = new javax.swing.JRadioButton();
-        basestats = new javax.swing.JRadioButton();
-        items = new javax.swing.JRadioButton();
-        ivs = new javax.swing.JRadioButton();
-        moves = new javax.swing.JRadioButton();
+        evs = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         topicButton = new javax.swing.JButton();
         fire = new javax.swing.JRadioButton();
@@ -69,6 +66,7 @@ public class basicLesson extends javax.swing.JFrame {
         dark = new javax.swing.JRadioButton();
         steel = new javax.swing.JRadioButton();
         poison = new javax.swing.JRadioButton();
+        ivs = new javax.swing.JRadioButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         goBack = new javax.swing.JMenuItem();
@@ -93,18 +91,12 @@ public class basicLesson extends javax.swing.JFrame {
         outputText.setEditable(false);
         outputText.setColumns(20);
         outputText.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        outputText.setLineWrap(true);
         outputText.setRows(5);
-        outputText.setText("By now you have started pokemon, but you \nprobably have some questions about pokemon \nbattling. There are many different mechanics\nthat influence the attack damage and the \namount of damage taken. In total, there are \n5 different pokemon stats which affect the\ndamage. These are HP, Attack, Defense, Special\nAttack and Special Defense. Each of these are\nset prior to each battle but, they can be \nincreased using stat boosts.You can choose \nwhich topic to learn more about below.");
+        outputText.setText("By now you have started pokemon, but you probably \nhave some questions about pokemon battling. There \nare many different mechanics that influence the \nattack damage and the amount of damage taken. \nIn total, there are 5 different pokemon stats \nwhich affect the damage.These are HP, Attack,Defense\nSpecial Attack and Special Defense. Each of these \nare set prior to each battle but, they can be \nincreased using stat boosts. You can choose \nwhich topic to learn more about below.");
+        outputText.setWrapStyleWord(true);
+        outputText.setAutoscrolls(false);
         jScrollPane1.setViewportView(outputText);
-
-        buttonGroup1.add(statboosts);
-        statboosts.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        statboosts.setText("Stat Boosts");
-        statboosts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statboostsActionPerformed(evt);
-            }
-        });
 
         buttonGroup1.add(rng);
         rng.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -133,39 +125,12 @@ public class basicLesson extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(basestats);
-        basestats.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        basestats.setText("Base Stats");
-        basestats.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(evs);
+        evs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        evs.setText("EV's");
+        evs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                basestatsActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(items);
-        items.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        items.setText("Items");
-        items.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemsActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(ivs);
-        ivs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        ivs.setText("IV's and EV's");
-        ivs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ivsActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(moves);
-        moves.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        moves.setText("Moves");
-        moves.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movesActionPerformed(evt);
+                evsActionPerformed(evt);
             }
         });
 
@@ -182,6 +147,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(fire);
+        fire.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fire.setForeground(new java.awt.Color(255, 0, 0));
         fire.setText("Fire");
         fire.setEnabled(false);
         fire.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +158,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(water);
+        water.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        water.setForeground(new java.awt.Color(102, 102, 255));
         water.setText("Water");
         water.setEnabled(false);
         water.addActionListener(new java.awt.event.ActionListener() {
@@ -200,6 +169,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(grass);
+        grass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        grass.setForeground(new java.awt.Color(51, 153, 0));
         grass.setText("Grass");
         grass.setEnabled(false);
         grass.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +180,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(bug);
+        bug.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        bug.setForeground(new java.awt.Color(0, 153, 51));
         bug.setText("Bug");
         bug.setEnabled(false);
         bug.addActionListener(new java.awt.event.ActionListener() {
@@ -218,6 +191,7 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(normal);
+        normal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         normal.setText("Normal");
         normal.setEnabled(false);
         normal.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +201,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(flying);
+        flying.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        flying.setForeground(new java.awt.Color(204, 204, 255));
         flying.setText("Flying");
         flying.setEnabled(false);
         flying.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +212,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(electric);
+        electric.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        electric.setForeground(new java.awt.Color(204, 204, 0));
         electric.setText("Electric");
         electric.setEnabled(false);
         electric.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +223,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(fighting);
+        fighting.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fighting.setForeground(new java.awt.Color(153, 0, 0));
         fighting.setText("Fighting");
         fighting.setEnabled(false);
         fighting.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +234,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(ground);
+        ground.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ground.setForeground(new java.awt.Color(102, 102, 0));
         ground.setText("Ground");
         ground.setEnabled(false);
         ground.addActionListener(new java.awt.event.ActionListener() {
@@ -263,6 +245,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(rock);
+        rock.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        rock.setForeground(new java.awt.Color(0, 102, 0));
         rock.setText("Rock");
         rock.setEnabled(false);
         rock.addActionListener(new java.awt.event.ActionListener() {
@@ -272,6 +256,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(ice);
+        ice.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ice.setForeground(new java.awt.Color(0, 204, 204));
         ice.setText("Ice");
         ice.setEnabled(false);
         ice.addActionListener(new java.awt.event.ActionListener() {
@@ -281,6 +267,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(ghost);
+        ghost.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ghost.setForeground(new java.awt.Color(0, 0, 51));
         ghost.setText("Ghost");
         ghost.setEnabled(false);
         ghost.addActionListener(new java.awt.event.ActionListener() {
@@ -290,6 +278,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(dragon);
+        dragon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        dragon.setForeground(new java.awt.Color(0, 0, 153));
         dragon.setText("Dragon");
         dragon.setEnabled(false);
         dragon.addActionListener(new java.awt.event.ActionListener() {
@@ -299,6 +289,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(fairy);
+        fairy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fairy.setForeground(new java.awt.Color(255, 153, 153));
         fairy.setText("Fairy");
         fairy.setEnabled(false);
         fairy.addActionListener(new java.awt.event.ActionListener() {
@@ -308,6 +300,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(psychic);
+        psychic.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        psychic.setForeground(new java.awt.Color(255, 153, 153));
         psychic.setText("Psychic");
         psychic.setEnabled(false);
         psychic.addActionListener(new java.awt.event.ActionListener() {
@@ -317,6 +311,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(dark);
+        dark.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        dark.setForeground(new java.awt.Color(51, 51, 51));
         dark.setText("Dark");
         dark.setEnabled(false);
         dark.addActionListener(new java.awt.event.ActionListener() {
@@ -326,6 +322,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(steel);
+        steel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        steel.setForeground(new java.awt.Color(0, 102, 102));
         steel.setText("Steel");
         steel.setEnabled(false);
         steel.addActionListener(new java.awt.event.ActionListener() {
@@ -335,6 +333,8 @@ public class basicLesson extends javax.swing.JFrame {
         });
 
         typeButton.add(poison);
+        poison.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        poison.setForeground(new java.awt.Color(102, 0, 102));
         poison.setText("Poison");
         poison.setEnabled(false);
         poison.addActionListener(new java.awt.event.ActionListener() {
@@ -342,6 +342,10 @@ public class basicLesson extends javax.swing.JFrame {
                 poisonActionPerformed(evt);
             }
         });
+
+        ivs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ivs.setText("IV's");
+        ivs.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -351,86 +355,81 @@ public class basicLesson extends javax.swing.JFrame {
                 .addGap(89, 89, 89)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(statboosts))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ghost)
+                            .addComponent(fairy)
+                            .addComponent(electric))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(basestats)
-                            .addComponent(typeMatchup))
-                        .addGap(17, 17, 17)
+                            .addComponent(ice)
+                            .addComponent(flying)
+                            .addComponent(psychic))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(items)
-                            .addComponent(natures))
-                        .addGap(27, 27, 27)
+                            .addComponent(dark)
+                            .addComponent(rock)
+                            .addComponent(normal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(moves)
-                            .addComponent(ivs)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(topicButton))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bug)
+                            .addComponent(ground)
+                            .addComponent(steel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(fairy)
-                                    .addComponent(electric)
-                                    .addComponent(ghost))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(psychic)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(dark))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(flying)
-                                            .addComponent(ice))
-                                        .addGap(10, 10, 10)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rock)
-                                            .addComponent(normal))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bug)
-                                    .addComponent(ground)
-                                    .addComponent(steel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(grass)
-                                    .addComponent(fighting)
-                                    .addComponent(poison))))
-                        .addGap(18, 18, 18)
+                            .addComponent(grass)
+                            .addComponent(fighting)
+                            .addComponent(poison))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(water)
                             .addComponent(dragon)
-                            .addComponent(fire))))
+                            .addComponent(fire)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(typeMatchup)
+                            .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(natures)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(evs)
+                                .addGap(28, 28, 28)
+                                .addComponent(ivs)))
+                        .addGap(85, 85, 85)))
                 .addGap(111, 111, 111))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(topicButton)
+                        .addGap(327, 327, 327))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(205, 205, 205))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(59, 59, 59)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addContainerGap()
+                        .addComponent(title)
+                        .addGap(2, 2, 2)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)))
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bug)
                     .addComponent(grass)
@@ -454,23 +453,20 @@ public class basicLesson extends javax.swing.JFrame {
                     .addComponent(poison)
                     .addComponent(dragon)
                     .addComponent(fairy))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(4, 4, 4)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(topicButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(statboosts)
                     .addComponent(typeMatchup)
-                    .addComponent(natures)
-                    .addComponent(moves))
-                .addGap(9, 9, 9)
+                    .addComponent(natures))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(items)
+                    .addComponent(evs)
                     .addComponent(ivs)
-                    .addComponent(basestats)
-                    .addComponent(rng))
-                .addGap(21, 21, 21))
+                    .addComponent(rng, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
 
         jMenu1.setText("Help");
@@ -519,17 +515,17 @@ public class basicLesson extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        System.exit(0);
+        System.exit(0); // exit command
     }//GEN-LAST:event_ExitActionPerformed
 
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
-        this.dispose();
+        this.dispose(); // opens the pre-test frame
         basicGuide pretest = new basicGuide();
         pretest.setVisible(true);
     }//GEN-LAST:event_goBackActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-        if (evt.getSource() == reset) {
+        if (evt.getSource() == reset) {  // closes and re-opens
             dispose();
             basicLesson resetProgram = new basicLesson();
             resetProgram.setVisible(true);
@@ -538,71 +534,168 @@ public class basicLesson extends javax.swing.JFrame {
 
     private void typeMatchupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeMatchupActionPerformed
      topicButton.setEnabled(true);
-      
-      
     }//GEN-LAST:event_typeMatchupActionPerformed
 
     private void rngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rngActionPerformed
         topicButton.setEnabled(true);  // I don't know how to set a button group to visible
     }//GEN-LAST:event_rngActionPerformed
 
-    private void statboostsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statboostsActionPerformed
-        topicButton.setEnabled(true);
-    }//GEN-LAST:event_statboostsActionPerformed
-
     private void naturesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naturesActionPerformed
         topicButton.setEnabled(true);
     }//GEN-LAST:event_naturesActionPerformed
-
-    private void movesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movesActionPerformed
-        topicButton.setEnabled(true);
-    }//GEN-LAST:event_movesActionPerformed
    
     private void topicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topicButtonActionPerformed
-        if (typeMatchup.isSelected()) {
-          grass.setEnabled(true);
-          fire.setEnabled(true);
-          bug.setEnabled(true);
-          electric.setEnabled(true);
-          normal.setEnabled(true);
-          water.setEnabled(true);
-          flying.setEnabled(true);
-          fighting.setEnabled(true);
-          ground.setEnabled(true);
-          poison.setEnabled(true);
-          steel.setEnabled(true);
-          rock.setEnabled(true);
-          dark.setEnabled(true);
-          psychic.setEnabled(true);
-          ice.setEnabled(true);
-          fairy.setEnabled(true);
-          ghost.setEnabled(true);
-          dragon.setEnabled(true);
-          title.setText("Type Matchups");
-          outputText.setText("");
+        outputText.setText(null);
+        if (typeMatchup.isSelected()) { // if the type button is pressed
+            grass.setEnabled(true); // enable type buttons
+            fire.setEnabled(true);
+            bug.setEnabled(true);
+            electric.setEnabled(true);
+            normal.setEnabled(true);
+            water.setEnabled(true);
+            flying.setEnabled(true);
+            fighting.setEnabled(true);
+            ground.setEnabled(true);
+            poison.setEnabled(true);
+            steel.setEnabled(true);
+            rock.setEnabled(true);
+            dark.setEnabled(true);
+            psychic.setEnabled(true);
+            ice.setEnabled(true);
+            fairy.setEnabled(true);
+            ghost.setEnabled(true);
+            dragon.setEnabled(true);
+            title.setText("Type Matchups");
+          
+            for (int i = 0; i < type.size(); i++) {
+                outputText.setText("");  // clears the text after the following loop
+                for (int x = 0; x < type.size(); x++) {
+                    outputText.setText(type.get(x) ); 
+                    if (type.get(x) == "Fire") {  // the fire type is selected etc...
+                     outputText.setText("Fire type pokemon are weak against ground, rock," + "\n" + "and water moves. Fire moves are strong" + "\n" + "against grass, bug, and steel types. " + "\n" + "An easy way to remeber this is that, fire melts steel," + "\n" + "and burns grass. For the weaknesses," + "fire is" + "\n" + "exstinguished with water,and both" + "\n" + "ground and rock resist fire");
+                    }
+                    else if (type.get(x) == "Water") {
+                        outputText.setText("Water type pokemon are weak against electric and grass"  + "\n" + "moves. Water moves are strong against fire, rock and"  + "\n" + "ground types. An easy way to remember this" + "\n" + "is that, water extinguishes a fire, and makes dirt" + "\n" + "wash away. Electric and grass weaknesses are" + "\n" + "self-explanatory");
+                    }
+                    else if (type.get(x) == "Grass") {
+                        outputText.setText("Grass type pokemon are weak against fire, flying," + "\n" + "poison, bug, and ice moves. These combinations of" + "\n" + "weaknesses make grass-type pokemon prone to a high damage" + "\n" + "attack. Grass type moves are super effective against rock," + "\n" + "ground, and water types.");
+                    }
+                    else if (type.get(x) == "Dragon") {
+                        outputText.setText("Dragon type pokemon are weak against dragon, ice," + "\n" + "and fairy moves. Dragon moves are super effective" + "\n" + "against dragon pokemon. Dragon pokemon usually have" + "\n" + "high base stats, which is why dragon attacks are" + "\n" + "only super effective against other dragons.");
+                    }
+                    else if (type.get(x) == "Poison") {
+                        outputText.setText("Poison type pokemon are weak against pyschic and ground" + "\n" + "moves. Poison moves are"
+                                + "super effective" + "\n" + "against fairy and grass type pokemon. ");
+                    }
+                    else if (type.get(x) == "Fighting") {
+                        outputText.setText("Fighting type pokemon are weak against pyschic, flying" + "\n" + "and fairy moves. Fighting"
+                                + "moves are super effective" + "\n" + "against normal, rock, steel and dark type pokemon.");
+                    }
+                    else if (type.get(x) == "Bug") {
+                        outputText.setText("Bug type pokemon are weak against fire, flying," + "\n" + "and rock moves. Bug moves are "
+                                + "strong against dark, grass," + "\n" + "and psychic pokemon");
+                    }
+                    else if (type.get(x) == "Ground") {
+                        outputText.setText("Ground type pokemon are weak to water, grass, and" + "\n" + "ice moves. Ground moves are "
+                                + "strong against poison, steel,rock, fire, and electric pokemon. These 5 strenghs make a ground type move quite potent, especially a super effective earthquake");
+                    }
+                    else if (type.get(x) == "Steel") {
+                        outputText.setText("Steel pokemon are weak to fire, ground, and fighting" + "\n" + "moves. They are stong against "
+                                + "ice, rock" + "\n" + "and fairy type pokemon");
+                    }
+                    else if (type.get(x) == "Normal") {
+                        outputText.setText("Normal type pokemon are weak to just fighting type" + "\n" + "moves. However, normal moves"
+                                + " are neutral, resisted" + "\n" + "or not effective. Interesting how the type deemed" + "\n"
+                                + "'normal', isn't very normal (relative to other pokemon)");
+                    }
+                    else if (type.get(x) == "Rock") {
+                        outputText.setText("Rock type pokemon are weak to ground, fighting, grass" + "\n" + "and water moves. Rock moves"
+                                + " are strong against" + "\n" + "bug, flying, ice, and fire types");
+                    }
+                    else if (type.get(x) == "Dark") {
+                        outputText.setText("Dark type pokemon are weak to bug, fighting and fairy" + "\n" + "type moves. Dark moves"
+                                + " are super effective toward" + "\n" + "ghost and pyschic type pokemon.");
+                    }
+                    else if (type.get(x) == "Flying") {
+                        outputText.setText("Flying type pokemon are weak to ice, rock and electric" + "\n" + "moves. Flying moves are "
+                                + "super effective toward grass," + "\n" + "bug, and fighting type pokemon.");
+                    }
+                    else if (type.get(x) == "Ice") {
+                        outputText.setText("Ice type pokemon are weak to fire, rock, fighting and" + "\n" + "steel moves. Ice moves are"
+                                + " super effective against" + "\n" + "grass, ground, dragon, and flying types.");
+                    }
+                    else if (type.get(x) == "Psychic") {
+                        outputText.setText("Psychic type pokemon are weak to dark, bug, and ghost" + "\n" + "moves. Psychic moves are"
+                                + " strong against fighting and poison types. Pyschic type pokemon usally have a high special- attack stat.");
+                    }
+                    else if (type.get(x) == "Electric") {
+                        outputText.setText("Electric type pokemon are weak to just ground type pokemon. This makes them "
+                                + "defensively strong, but usually," + "\n" + "electric pokemon have weak defensive stats. Electric" + "\n"
+                                + "moves are super effective against flying and water type" + "\n" + "pokemon.");
+                    }
+                    else if (type.get(x) == "Ghost") {
+                        outputText.setText("Ghost type pokemon are weak to dark, and other" + "\n" + "ghost types. Ghost moves are"
+                                + " super effective against other ghost type pokemon.");
+                    }
+                    else if (type.get(x) == "Fairy") {
+                        outputText.setText("The fairy type is the newest type to be introduced," + "\n" + "first in pokemon x and y."
+                                + "The fairy type is prone to" + "\n" + "two weaknesses, they are steel and poison." + "\n" + "Fairy"
+                                + " type moves are supereffective toward" + "\n" + "dragon, dark, and fighting pokemon.");
+                    }
+                    
+                }
+             
+            }
+          type.remove(type.size());  // to make sure multiple types aren't evaluated
+          
+          
+        } 
+        
+        else if (natures.isSelected()) {  // if the natures button is pressed
+            title.setText("Natures");
+            outputText.setText("In pokemon, there is a trait which all pokemon haveand it is called a nature. "
+                    + " There are 25 different natures, each of thesehave their own benefits. 20 of these ,"
+                    + " hinder one stat by 10%, and increase another by 10%. This is an important part of the competitive scene, "
+                    + "because every stat counts in damage calculations. An example is the 'Adamant' nature, pokemon that are bred"
+                    + " with the adamant nature, have an increased attack stat and a decreased special attact stat. This nature would "
+                    + "be ideal for a pokemon with a high attack stat, and a low special attack stat. Another example is the bold "
+                    + "nature, it raises defese and lowers attack. Since not all pokemon 'use' both of there attacking stats, it is"
+                    + " best to breed for the nature which, hinders the one not being used.");
         }
-        
-        
-   
+        else if (evs.isSelected()) { // if the user wants to learn about ev's
+            ivs.setEnabled(true); // makes it so the user reads about ev's before iv's
+            title.setText("Ev's");
+            outputText.setText("After a trainers pokemon defeats another pokemon, it gains what are called effort values. "
+                    + "Depending on the effort values of the opponent, the trainer's pokemon will have an increase in one or more "
+                    + "particular stats. In total, a pokemon can have a maximum of 508 ev's. However, they can't be trained for one "
+                    + "stat. The pokemon can have 252 ev's in one stat, before it maxes out. Since there are 6 pokemon stats, a pokemon"
+                    + " can have their ev's spread throughout all of their stats. An optimal plan for a pokemon is to train the stats "
+                    + "which, have a competitive impact. This ensures none of the ev's are wasted on stats that the pokemon doesn't need.");
+        }
+        else if (ivs.isSelected()) { // if the user wantrs to learn about iv's
+            title.setText("Iv's");
+            outputText.setText("Iv's are a pre-determined stat multiplier, and they have a greater effect on the minimum and maximum "
+                    + "stats; more so than ev's. Since there are 6 stats, there are 6 iv's. Each of these max out at 31, and they range"
+                    + " from 0-31. Pokemon with high iv's are highly regarded in the competitive scene, and iv's can be passed on from "
+                    + "the parent to the offspring; if certain items are held. The total for the hp or base stat is modeled as a complex"
+                    + " mathematical formula, this is because there are many mechanics that affect stats." );
+        }
+        else if (rng.isSelected()) { // if the user wants to learn about rng
+            title.setText("Damage Rolls");
+            outputText.setText("Ah, just when you thought you knew everything about damage calculations. Damage rolls or also called "
+                    + "random number generation, is a 'random' process of selecting the appropriate damage, based on a series of high"
+                    + " and low possibilities. It can have infuriating effects such as nearly K.O-ing an opponent, only for them"
+                    + " to survive with 1 hp. But also, it is a centralized mechanic of pokemon, and partly why it's unpredictable and "
+                    + "enjoyable.");
+        }
     }//GEN-LAST:event_topicButtonActionPerformed
 
-    private void basestatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basestatsActionPerformed
+    private void evsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evsActionPerformed
         topicButton.setEnabled(true);
-    }//GEN-LAST:event_basestatsActionPerformed
-
-    private void itemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemsActionPerformed
-        topicButton.setEnabled(true);
-    }//GEN-LAST:event_itemsActionPerformed
-
-    private void ivsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ivsActionPerformed
-        topicButton.setEnabled(true);
-    }//GEN-LAST:event_ivsActionPerformed
+    }//GEN-LAST:event_evsActionPerformed
 
     private void electricActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electricActionPerformed
-        type.add("Electric");   /*
-                                        In hindsight, this should have been made using the isSelected()
-                                        method to make the algorithm more efficient
-                                    */
+        type.add("Electric");  // adds the type               
     }//GEN-LAST:event_electricActionPerformed
                                     
     private void flyingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flyingActionPerformed
@@ -710,12 +803,12 @@ public class basicLesson extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Exit;
-    private javax.swing.JRadioButton basestats;
     private javax.swing.JRadioButton bug;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton dark;
     private javax.swing.JRadioButton dragon;
     private javax.swing.JRadioButton electric;
+    private javax.swing.JRadioButton evs;
     private javax.swing.JRadioButton fairy;
     private javax.swing.JRadioButton fighting;
     private javax.swing.JRadioButton fire;
@@ -725,7 +818,6 @@ public class basicLesson extends javax.swing.JFrame {
     private javax.swing.JRadioButton grass;
     private javax.swing.JRadioButton ground;
     private javax.swing.JRadioButton ice;
-    private javax.swing.JRadioButton items;
     private javax.swing.JRadioButton ivs;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -737,7 +829,6 @@ public class basicLesson extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JRadioButton moves;
     private javax.swing.JRadioButton natures;
     private javax.swing.JRadioButton normal;
     private javax.swing.JTextArea outputText;
@@ -746,7 +837,6 @@ public class basicLesson extends javax.swing.JFrame {
     private javax.swing.JMenuItem reset;
     private javax.swing.JRadioButton rng;
     private javax.swing.JRadioButton rock;
-    private javax.swing.JRadioButton statboosts;
     private javax.swing.JRadioButton steel;
     private javax.swing.JLabel title;
     private javax.swing.JButton topicButton;

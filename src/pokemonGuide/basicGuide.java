@@ -349,6 +349,12 @@ public class basicGuide extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
+    if (inputName.getText().isEmpty()) { // makes sure a name is entered
+        outputTest.setText("Please enter your name to continue");
+    }
+    
+    else {
+    inputName.setText("");
     type1.setSelected(false);  // clears each radio button
     type2.setSelected(false);
     type3.setSelected(false);
@@ -361,7 +367,7 @@ public class basicGuide extends javax.swing.JFrame {
         
         testButton.setVisible(false);  // disable after use
         if (grade[0] == 4 && ability[0] == 4)  { 
-        outputTest.setText(name + ", Since both your ratings were 4" + "\n" + "you should go back to the main screen to learn about more advanced topics" + "\n" + "Press help and 'go back' to reach the main menu");
+        outputTest.setText(name + ", Since both of your ratings were 4" + "\n" + "you should go back to the main screen to expand on your knowledge" + "\n" + "Press help and 'go back' to reach the main menu. Or you can continue" + "\n" + "to the lesson below.");
         jButton1.setVisible(true);
      }
         
@@ -370,7 +376,7 @@ public class basicGuide extends javax.swing.JFrame {
             jButton1.setVisible(true);
         }
     
-        else if (grade[0] == 3 || grade[0] == 2 || ability[0] == 3 || ability[0] == 2){  // has a fair amount of knowledge
+        else if (grade[0] == 3 || ability[0] == 3){  // has a fair amount of knowledge
          outputTest.setText(name + ", you rated yourself a " + grade[0] + " in type advantages" + "\n" + "and a " + ability[0] + " in abilities" + "\n" + "this means you have a fair amount of knowledge on battling concepts" + "\n" + "You can expand on your knowledge in the lesson below");
          jButton1.setVisible(true);  
             }
@@ -378,19 +384,27 @@ public class basicGuide extends javax.swing.JFrame {
             outputTest.setText(name + ", if you want to learn more about type matchups, start the lesson!");
             jButton1.setVisible(true);
         }
-        else {  // this means the user is very new to the series
-            outputTest.setText(name + ", are you new to the pokemon series?" + "\n" + "If so, go to the pokemon website for further information on the beginning concepts");
+        else if (grade[0] == 1 || ability[0] == 2) {
+            outputTest.setText(name + ", you rated yourself a " + grade[0] + " in type advantages. You can practice your"
+                    + "\n" + "type matchups with a lesson and a quiz below.");
+        }
+        else if (grade[0] == 2 || ability[0] == 1) {
+            outputTest.setText(name + ", you rated yourself a " + grade[0] + " in type advantages, and a " + ability[0] + " in abilities. You can learn more" + "\n" + "about abilities with a lesson and a quiz below.");
+        }
+        else {  // this means the user is new to pokemon
+            outputTest.setText(name + ", are you new to the pokemon series?" + "\n" + "If so, go to the pokemon website for further information on the beginning concepts." + "\n" + "Click on the button below to begin the lesson. ");
             jButton1.setVisible(true);
             }
         
-  
+        inputName.setText(null);
+    }
      // this method checks to see which options were selected
     }//GEN-LAST:event_testButtonActionPerformed
 
     private void nameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameButtonActionPerformed
         name = inputName.getText();  // adds the content of the text field to the string variable
-        inputName.setText(null);
         testButton.setVisible(true);
+  
     }//GEN-LAST:event_nameButtonActionPerformed
 
     private void type4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type4ActionPerformed
