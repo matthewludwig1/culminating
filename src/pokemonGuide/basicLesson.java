@@ -35,7 +35,7 @@ public class basicLesson extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<String>();
+        jList1 = new javax.swing.JList<>();
         jSpinner1 = new javax.swing.JSpinner();
         buttonGroup1 = new javax.swing.ButtonGroup();
         typeButton = new javax.swing.ButtonGroup();
@@ -78,10 +78,10 @@ public class basicLesson extends javax.swing.JFrame {
         Exit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane2.setViewportView(jList1);
 
@@ -799,8 +799,8 @@ public class basicLesson extends javax.swing.JFrame {
 
     private void beginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginActionPerformed
         this.dispose();
-        quiz quizz = new quiz();
-        quizz.setVisible(true);
+        actualquiz quiz = new actualquiz();
+        quiz.setVisible(true);
     }//GEN-LAST:event_beginActionPerformed
 
     /**
